@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Home() {
+function Blogs() {
   return (
     <div>
-      Home
+      Blogs
     </div>
   )
 }
 
-export default Home
+export default Blogs
