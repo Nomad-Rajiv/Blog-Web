@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-
 // React Icons
 
 import { FaBars, FaDribbble, FaFacebook, FaTwitter, FaXmark } from 'react-icons/fa6'
@@ -8,7 +7,7 @@ import { FaBars, FaDribbble, FaFacebook, FaTwitter, FaXmark } from 'react-icons/
 function Navbar() {
 
   {/* For toggling the menu button */}
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false) 
 
   const toggleMenu = () =>{
     setIsMenuOpen(!isMenuOpen)
@@ -34,7 +33,11 @@ function Navbar() {
         <ul className='md:flex gap-12 text-lg hidden'>
           {
             navItems.map(({path,link}) => <li className='text-white' key={path}>
-              <NavLink to={path}>{link}</NavLink>
+              <NavLink 
+              className={({isActive}) => 
+                isActive ? "active" : "" 
+            }
+            to={path}>{link}</NavLink>
             </li>)
           }
         </ul>
@@ -62,7 +65,7 @@ function Navbar() {
               <ul className={`md:hidden gap-12 text-lg block space-y-2 px-4 py-6 mt-14 bg-white ${isMenuOpen ? "fixed top-0 left-0 w-full transition-all ease-out duration-150" : "hidden"} `}>
                     {
                       navItems.map(({path,link}) => <li className='text-black' key={path}>
-                        <NavLink to={path}>{link}</NavLink>
+                        <NavLink onClick={toggleMenu} to={path}>{link}</NavLink>
                       </li>)
                     }
               </ul>
