@@ -5,7 +5,7 @@
   function BlogCard({blogs, currentPage, selectedCategory, pageSize}) {
     const filterdBlogs = blogs
     .filter((blogs) => !selectedCategory || blogs.category === selectedCategory)
-    .slice((currentPage -1) *pageSize, currentPage * pageSize);
+    .slice((currentPage -1) * pageSize, currentPage * pageSize);
     
     return (
       <div className='grid md:grid-cols-3 sm:gird-cols-2 grid-cols-1 gap-8'>
