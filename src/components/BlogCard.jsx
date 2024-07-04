@@ -10,7 +10,7 @@
     return (
       <div className='grid md:grid-cols-3 sm:gird-cols-2 grid-cols-1 gap-8'>
           {
-            filterdBlogs.map((blog) => <Link key={blog.id} className='p-5 shadow-lg rounded cursor-pointer'>
+            filterdBlogs.map((blog) => <Link to={`/blogs/${blog.id}`} key={blog.id} className='p-5 shadow-lg rounded cursor-pointer'>
               <div>
                 <img src={blog.image} alt="" className='w-full'/>
               </div>
